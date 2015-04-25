@@ -295,7 +295,7 @@ void irtkPointSet::WriteVTK(char *filename)
   // Create writer
   vtkPolyDataWriter *writer = vtkPolyDataWriter::New();
   writer->SetFileName(filename);
-  writer->SetInput(data);
+  writer->SetInputData(data); 
   writer->Update();
 #else
   cerr << "irtkPointSet::WriteVTK: Must be compiled with VTK enabled" << endl;

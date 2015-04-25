@@ -100,21 +100,18 @@ void write(char *file, vtkPointSet *pset)
 {
   if (pset->IsA("vtkStructuredGrid")) {
     vtkStructuredGridWriter *writer = vtkStructuredGridWriter::New();
-    writer->SetInput((vtkStructuredGrid *)pset);
     writer->SetFileName(file);
     writer->SetFileTypeToBinary();
     writer->Update();
   } else {
     if (pset->IsA("vtkUnstructuredGrid")) {
       vtkUnstructuredGridWriter *writer = vtkUnstructuredGridWriter::New();
-      writer->SetInput((vtkUnstructuredGrid *)pset);
       writer->SetFileName(file);
       writer->SetFileTypeToBinary();
       writer->Update();
     } else {
       if (pset->IsA("vtkPolyData")) {
         vtkPolyDataWriter *writer = vtkPolyDataWriter::New();
-        writer->SetInput((vtkPolyData *)pset);
         writer->SetFileName(file);
         writer->SetFileTypeToBinary();
         writer->Update();

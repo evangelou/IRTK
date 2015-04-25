@@ -141,7 +141,6 @@ int main(int argc, char **argv)
   grid->GetPointData()->SetVectors(vectors);
 
   // Write structured grid
-  writer->SetInput(grid);
   writer->SetFileName(output_name);
   writer->SetFileTypeToBinary();
   writer->SetVectorsName("vectors");
